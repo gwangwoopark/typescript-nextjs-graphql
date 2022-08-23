@@ -2,9 +2,11 @@ import { ApolloServer } from "apollo-server-micro";
 import { ApolloServerPluginLandingPageGraphQLPlayground } from "apollo-server-core";
 import { NextApiRequest, NextApiResponse } from "next";
 import { schema } from "@graphql/schema";
+import { context } from "@graphql/context";
 
 const server = new ApolloServer({
   schema,
+  context,
   plugins: [ApolloServerPluginLandingPageGraphQLPlayground()],
 });
 
